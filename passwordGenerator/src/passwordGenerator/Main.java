@@ -34,7 +34,7 @@ public class Main
 		}
 	}
 
-	// Function for generating random Character's
+	// Function for generating random Character
 	static public char randomCharacter()
 	{
 		int randomNumber = (int)(Math.random() * 62);
