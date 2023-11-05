@@ -29,27 +29,45 @@ public class Main
 			{
 					randomPassword += randomCharacter();
 			}
-		passwordArray[passwordCount - 1] = randomPassword;
-		printArray(passwordArray);
+			
+		passwordArray[i] = randomPassword;
 		}
+		
+		printArray(passwordArray);
 	}
 
 	// Function for generating random Character
 	static public char randomCharacter()
 	{
-		int randomNumber = (int)(Math.random() * 62);
+		int randomNumber = (int)(Math.random() * 95);
 		
-		if(randomNumber <= 9)
+		if(randomNumber <= 9) // Does 0-9
 		{
 			return (char) (randomNumber + 48);
 		}
-		else if(randomNumber <= 35)
+		else if(randomNumber <= 35) // Does A-Z
 		{
 			return  (char) (randomNumber + 55);
 		}
-		else if(randomNumber <= 61)
+		else if(randomNumber <= 61) // Does a-z
 		{
 			return (char) (randomNumber + 61);
+		}
+		else if(randomNumber <= 77) // Does Space-/
+		{
+			return (char) (randomNumber - 30);
+		}
+		else if(randomNumber <= 84) // Does :-@
+		{
+			return (char) (randomNumber - 20);
+		}
+		else if(randomNumber <= 90)
+		{
+			return (char) (randomNumber + 6);
+		}
+		else if(randomNumber <= 94)
+		{
+			return (char) (randomNumber + 2);
 		}
 		return (char) -1;
 
@@ -60,10 +78,7 @@ public class Main
 	{
 		for(int i = 0; i < printPasswords.length; i++)
 		{
-			if(printPasswords[i]!= null)
-			{
-				System.out.println(printPasswords[i]);
-			}
+				System.out.println("||" + printPasswords[i] + "||");
 		}
 	}
 }
